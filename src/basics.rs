@@ -9,6 +9,9 @@ pub fn basics() {
   let x = 5;
   println!("x = {}", x);
 
+  // Would cause Error: cannot assign to immutable variable
+  // x = 6;
+
   // Named arguments can be used to help with output
   println!(
     "{a}, this is {b}. {b}, this is {a}.",
@@ -16,8 +19,16 @@ pub fn basics() {
     b = "Bob"
   );
 
-  // Would cause Error: cannot assign to immutable variable
-  // x = 6;
+  // Logic statements and loops don't need brackets around the check
+  if x == 5 {
+    println!("x is five!");
+  }
+
+  // Check must be boolean and cannot be auto-converted like in JavaScript
+  // if x { // Error: cannot use `x` as a boolean
+  if x != 0 {
+    println!("x is not 0!");
+  }
 
   // Mutable variables must be explicitly declared as mutable
   let mut y = 5;
@@ -63,6 +74,9 @@ pub fn basics() {
   // Array has fixed size and all elements must have the same type.
   let array = [1, 2, 3, 4, 5];
   println!("array = {:?}", array);
+  for i in array.iter() {
+    println!("i = {}", i);
+  }
 
   // Shorthand syntax can be used to declare array with repreating values
   // This is equal to [1, 1, 1, 1, 1]
