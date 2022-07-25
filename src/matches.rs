@@ -4,21 +4,21 @@ pub fn matches() {
     Hello,
     MinutesUntilEvent(u32),
     SomeOther,
-    Messages
+    Messages,
   };
 
   let my_message = Message::Hello;
   match my_message {
     // The "unit type" ("()") can be used to indicate noop
-    Hello => (),
+    Message::Hello => (),
 
     // Curly brackets can be added to use multi-line expressions
-    MinutesUntilEvent(minutes) => {
-      println!("{}", minutes)
-      println!("Not that far away!")
+    Message::MinutesUntilEvent(minutes) => {
+      println!("{}", minutes);
+      println!("Not that far away!");
 
       // Values can be returned here
-      90
+      ()
     }
 
     // "match" patterns need to be exhaustive, otherwise a compiler error will be thrown.
@@ -27,7 +27,7 @@ pub fn matches() {
     // Something like "_ => ()" can be used to indicate to the compiler that other cases have been
     // thought about but nothing needs to be done.
     // The catch-all should be placed at the bottom as it will catch everything that has gone though.
-    _ => println!("Something else")
+    _ => println!("Something else"),
   }
 
   // ####################################################################################
@@ -40,8 +40,8 @@ pub fn matches() {
     6 => 0,
 
     // Instead of "_" a variable name can be used to catch all other values
-    dice_value => dice_value + 1
-  }
+    dice_value => dice_value + 1,
+  };
 
   // ####################################################################################
 
