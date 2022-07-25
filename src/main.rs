@@ -1,16 +1,28 @@
 mod ownership;
+
+// "use" can be used like in PHP to move items into the scope
 use ownership::ownership;
 
 mod basics;
-use basics::basics;
 
 mod structs;
-use structs::structs;
+
+mod struct_methods;
+
+mod enums;
+
+mod option;
+
+mod matches;
 
 fn main() {
     println!("Learning Rust");
 
-    basics();
+    basics::basics();
     ownership();
-    structs();
+    structs::structs();
+    struct_methods::struct_methods();
+    enums::enums();
+    option::option();
+    matches::matches();
 }
