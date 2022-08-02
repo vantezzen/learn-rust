@@ -5,7 +5,7 @@ pub fn matches() {
     MinutesUntilEvent(u32),
     SomeOther,
     Messages,
-  };
+  }
 
   let my_message = Message::Hello;
   match my_message {

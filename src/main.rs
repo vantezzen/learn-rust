@@ -15,6 +15,12 @@ mod option;
 
 mod matches;
 
+mod modules;
+
+mod collections;
+
+mod errors;
+
 fn main() {
     println!("Learning Rust");
 
@@ -25,4 +31,7 @@ fn main() {
     enums::enums();
     option::option();
     matches::matches();
+    modules::modules();
+    collections::collections();
+    errors::errors();
 }
